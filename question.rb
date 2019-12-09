@@ -15,14 +15,23 @@ class Question
     self.correct_answer = num1 + num2
   end
 
-  def ask_question(player)
-    puts "Player #{player}... what is #{@num1} + #{@num2}?"
+  def ask_question(p1, p2)
+    puts "Player #{p1.active && p1.name || p2.name}... what is #{@num1} + #{@num2}?"
     self.answer = gets.chomp
+    while self.answer == ""
+      puts "Please enter a number..."
+      self.answer = gets.chomp
+    end
     if answer.to_i == correct_answer
       puts "Correct!"
     else
-      puts "Wrong! You lose one life"
+      puts "Wrong! You lose one life."
     end
+  end
+
+  def reset
+    set_nums
+    answer = 0
   end
 
 end

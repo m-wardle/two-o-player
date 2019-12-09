@@ -17,7 +17,7 @@ class Player
   end
 
   def current_lives
-    puts "Player #{@name} has #{@lives} lives remaining!"
+    "Player #{@name} has #{@lives} lives remaining!"
   end
 
 end
