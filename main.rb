@@ -3,7 +3,7 @@ require_relative 'question'
 require_relative 'game'
 
 def check_answer(p1, p2, q)
-  if q.correct_answer != q.answer
+  if q.correct_answer != q.answer.to_i
     if p1.active 
       p1.lives -= 1
     else
